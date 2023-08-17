@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from '../components/MovieCard';
+import '../styles.css'; 
 
 function Home() {
 
@@ -10,18 +11,19 @@ function Home() {
   ];
 
   return (
-    <div>
+    <div className="container">
       <h1>Welcome to the Movie Theater Website</h1>
-
       <h2>Featured Movies</h2>
-      {movies.map((movie, index) => (
-        <MovieCard
-          key={index}
-          title={movie.title}
-          genre={movie.genre}
-          releaseYear={movie.releaseYear}
-        />
-      ))}
+      <div className="movie-list">
+        {movies.map((movie, index) => (
+          <MovieCard
+            key={index}
+            title={movie.title}
+            genre={movie.genre}
+            releaseYear={movie.releaseYear}
+          />
+        ))}
+      </div>
     </div>
   );
 }
